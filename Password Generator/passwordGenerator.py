@@ -54,8 +54,6 @@ def copy():
 # Main function
 # Create GUI window
 root = Tk()
-var = IntVar()
-var1 = IntVar()
 
 # GUI window title
 root.title("Randomized Password Generator")
@@ -78,6 +76,10 @@ copy_button.grid(row=0, column=2)
 generate_button = Button(root, text="Generate", command=generate)
 generate_button.grid(row=0, column=3)
 
+# Creating variable var for radio buttons
+var = IntVar()
+# Giving default strength to MEDIUM to radio button
+var.set(2)
 # Radio buttons to select strength of password
 radio_low = Radiobutton(root, text="EASY", variable=var, value=1)
 radio_low.grid(row=1, column=2, sticky="E")
@@ -86,6 +88,8 @@ radio_middle.grid(row=1, column=3, sticky="E")
 radio_strong = Radiobutton(root, text="HARD", variable=var, value=3)
 radio_strong.grid(row=1, column=4, sticky="E")
 
+# Creating variable var1 for passsword length
+var1 = IntVar()
 # Combo Box to select length of password
 combo = Combobox(root, textvariable=var1)
 
